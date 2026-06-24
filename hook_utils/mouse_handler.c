@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuak <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 20:05:09 by yuak              #+#    #+#             */
-/*   Updated: 2025/12/11 20:05:11 by yuak             ###   ########.fr       */
+/*   Updated: 2026/06/24 19:52:06 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int	mouse_handler_mandelbrot(int button, int x, int y, t_connection *conn)
+int	mouse_handler_mandelbrot(int button, int x, int y, void *param)
 {
-	t_img_data	*i;
+	t_connection	*conn;
+	t_img_data		*i;
 
+	conn = (t_connection *) param;
 	(void) x;
 	(void) y;
 	i = &conn->img_data;
@@ -36,10 +38,12 @@ int	mouse_handler_mandelbrot(int button, int x, int y, t_connection *conn)
 	return (0);
 }
 
-int	mouse_handler_julia(int button, int x, int y, t_connection *conn)
+int	mouse_handler_julia(int button, int x, int y, void *param)
 {
-	t_img_data	*i;
+	t_connection	*conn;
+	t_img_data		*i;
 
+	conn = (t_connection *) param;
 	(void) x;
 	(void) y;
 	i = &conn->img_data;

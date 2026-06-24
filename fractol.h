@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuak <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 21:02:03 by yuak              #+#    #+#             */
-/*   Updated: 2025/12/11 21:02:05 by yuak             ###   ########.fr       */
+/*   Updated: 2026/06/24 19:57:52 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ void	julia(char *x, char *y);
 void	put_pixel(t_img_data *img_data, double x, double y, int color);
 int		get_color(int i);
 int		handle_keys(int keycode, void *param);
-int		close_window(t_connection *conn);
-int		mouse_handler_mandelbrot(int button, int x, int y, t_connection *conn);
-int		mouse_handler_julia(int button, int x, int y, t_connection *conn);
+int		close_window(void *param);
+int		mouse_handler_mandelbrot(int button, int x, int y, void *param);
+int		mouse_handler_julia(int button, int x, int y, void *param);
 void	draw_mandelbrot(t_connection *conn);
 void	draw_julia(t_connection *conn);
 char	*remove_space(char *str);
