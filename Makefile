@@ -36,9 +36,9 @@ $(MLX):
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	rm -f $(OBJ)
 	make -C libft clean
 	make -C minilibx-linux clean
-	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(LIBFT)
